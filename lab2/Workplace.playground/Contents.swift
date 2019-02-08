@@ -12,15 +12,78 @@
 
 
 // YOUR CODE HERE
+protocol Payable {
+    func wages() -> Double
+}
 
+extension Payable {
+    func wages() -> Double {
+        return 50_000.00
+    }
+}
 
+protocol TimeOff {
+    var vacationDays: Int { get }
+    func requestForVacation(_ days: Int) -> Bool
+}
+
+extension TimeOff {
+    func requestForVacation(_ days: Int) -> Bool {
+        return vacationDays >= days
+    }
+}
+
+enum Task {
+    case spreadsheet
+    case emails
+    case coffee
+}
+
+protocol Work {
+    func doWork(_ task: Task) -> String
+}
+
+extension Work {
+    func doWork(_ task: Task) -> String {
+        switch task {
+            case .spreadsheet:
+                return "Balancing the company budget"
+            case .coffee:
+                return "Getting coffee"
+            case .emails:
+                return "Checking emails"
+        }
+    }
+}
 /*:
  ### Part 2: Putting It All Together
  */
 
 
 // YOUR CODE HERE
+protocol Employee : Payable, TimeOff{
+    
+}
 
+struct Manager {
+    var name: String
+    var vacationDays: Int = 30
+}
+
+extension Manager : Employee {
+    func wages() -> Double {
+        return 100_000.00
+    }
+}
+
+struct Worker {
+    var name : String
+    var vacationDays : Int = 15
+}
+
+extension Worker : Employee, Work {
+    
+}
 
 
 
@@ -32,7 +95,7 @@
  
  Uncomment and run these as a sanity check
  */
-/*
+
  struct FakePerson: Payable, TimeOff, Work {
  var vacationDays: Int = 15
  }
@@ -56,4 +119,5 @@
  testWorker.requestForVacation(15)    // Should return true
  testWorker.requestForVacation(16)    // Should return false
  testWorker.doWork(.coffee)           // Should return "Getting coffee"
- */
+
+
