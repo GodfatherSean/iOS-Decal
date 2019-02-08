@@ -107,15 +107,19 @@ let threes = numbers.map({ number in number == 3 ? 3 : 0})
 //: Using the `map` fucntion, write a closure to return an array with all the odd numbers in `newNumbers` multiplied by two. Do it without using any parentheses.
 //:
 var newNumbers = [3, 15, 40, 2, 9, 24, 77, 0]
-
+let nums = newNumbers.map({ number in number % 2 == 1 ? number * 2 : number})
 //: ## Objects and Classes
 //:
 //: Use `class` followed by the class’s name to create a class. A property declaration in a class is written the same way as a constant or variable declaration, except that it is in the context of a class. Likewise, method and function declarations are written the same way.
 //:
 class Shape {
+    let newProperty = "new property"
     var numberOfSides = 0
     func simpleDescription() -> String {
         return "A shape with \(numberOfSides) sides."
+    }
+    func checkLine() -> Bool {
+        return numberOfSides == 1
     }
 }
 
@@ -127,7 +131,6 @@ class Shape {
 var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
-
 //: This version of the `Shape` class is missing something important: an initializer to set up the class when an instance is created. Use `init` to create one.
 //:
 class NamedShape {
