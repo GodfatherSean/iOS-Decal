@@ -26,54 +26,90 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wor-kJ-PBb">
                                                 <rect key="frame" x="0.0" y="0.0" width="115" height="114.5"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="Wxe-ZT-FJ5"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDJ-SA-GpL">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDJ-SA-GpL">
                                                 <rect key="frame" x="125" y="0.0" width="115" height="114.5"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="U88-9Q-l31"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIP-tv-FLH">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIP-tv-FLH">
                                                 <rect key="frame" x="250" y="0.0" width="115" height="114.5"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="IqO-WL-bIX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-ER-3vF">
                                         <rect key="frame" x="0.0" y="124.5" width="365" height="114"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um4-Nb-HLc">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um4-Nb-HLc">
                                                 <rect key="frame" x="0.0" y="0.0" width="115" height="114"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="OsQ-Wd-xuf"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsg-Th-dte">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsg-Th-dte">
                                                 <rect key="frame" x="125" y="0.0" width="115" height="114"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="1qs-X9-7dy"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNA-Z3-7Yu">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNA-Z3-7Yu">
                                                 <rect key="frame" x="250" y="0.0" width="115" height="114"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="LfI-fQ-fnO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rVS-4U-aVe">
                                         <rect key="frame" x="0.0" y="248.5" width="365" height="114"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-MG-HZ8">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-MG-HZ8">
                                                 <rect key="frame" x="0.0" y="0.0" width="115" height="114"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="JWu-BA-vP1"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-PP-ZcF">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-PP-ZcF">
                                                 <rect key="frame" x="125" y="0.0" width="115" height="114"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="hQE-GQ-5tT"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-GJ-viK">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-GJ-viK">
                                                 <rect key="frame" x="250" y="0.0" width="115" height="114"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="keI-bH-H3Y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ibi-dt-HoE">
                                         <rect key="frame" x="0.0" y="372.5" width="365" height="114.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmL-Cd-bJe">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmL-Cd-bJe">
                                                 <rect key="frame" x="0.0" y="0.0" width="115" height="114.5"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="htD-Fa-OuX"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23b-9I-8E5">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23b-9I-8E5">
                                                 <rect key="frame" x="125" y="0.0" width="115" height="114.5"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="Ko5-QK-hWx"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggk-Rd-Drl">
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggk-Rd-Drl">
                                                 <rect key="frame" x="250" y="0.0" width="115" height="114.5"/>
+                                                <connections>
+                                                    <segue destination="231-z0-ISd" kind="showDetail" id="uGL-ao-a5h"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -98,6 +134,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="randomizeImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rp-e3-NeN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Picker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMu-D8-7mq">
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
@@ -121,9 +160,50 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zas-Is-9H9"/>
                     </view>
+                    <connections>
+                        <outlet property="randomizationButton" destination="zqT-62-DkL" id="w21-PU-c7U"/>
+                        <outlet property="stack" destination="fI0-RT-O5s" id="dih-FN-uVx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="bbt-fl-ViV">
+            <objects>
+                <viewController id="231-z0-ISd" customClass="ImageViewController" customModule="ImagePicker_Starter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nbJ-uZ-1ea">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3b-WY-Dsu">
+                                <rect key="frame" x="19" y="175" width="337.5" height="337.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="e3b-WY-Dsu" secondAttribute="height" multiplier="1:1" id="HxZ-rP-zyp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="goBack:" destination="231-z0-ISd" eventType="touchUpInside" id="avp-Yb-DsB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e3b-WY-Dsu" firstAttribute="centerY" secondItem="K1W-R0-V5z" secondAttribute="centerY" id="TqI-BK-6os"/>
+                            <constraint firstItem="e3b-WY-Dsu" firstAttribute="width" secondItem="nbJ-uZ-1ea" secondAttribute="width" multiplier="0.9" id="jF7-Aa-yYu"/>
+                            <constraint firstItem="e3b-WY-Dsu" firstAttribute="centerX" secondItem="K1W-R0-V5z" secondAttribute="centerX" id="v9X-Rm-z4j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K1W-R0-V5z"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewButton" destination="e3b-WY-Dsu" id="VGe-1M-u5T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57b-mI-PE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525.5999999999999" y="26.53673163418291"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hQE-GQ-5tT"/>
+    </inferredMetricsTieBreakers>
 </document>

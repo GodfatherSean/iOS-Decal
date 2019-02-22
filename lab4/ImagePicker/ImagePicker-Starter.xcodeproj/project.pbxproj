@@ -12,6 +12,8 @@
 		30F7774D221F73EC002A9FAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F7774B221F73EC002A9FAA /* Main.storyboard */; };
 		30F7774F221F73ED002A9FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F7774E221F73ED002A9FAA /* Assets.xcassets */; };
 		30F77752221F73ED002A9FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F77750221F73ED002A9FAA /* LaunchScreen.storyboard */; };
+		A3BB4590221FC2DB00E36273 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BB458F221FC2DB00E36273 /* ImagePicker.swift */; };
+		A3BB4592221FC88400E36273 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BB4591221FC88400E36273 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		30F7774E221F73ED002A9FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30F77751221F73ED002A9FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30F77753221F73ED002A9FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3BB458F221FC2DB00E36273 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A3BB4591221FC88400E36273 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				30F7774E221F73ED002A9FAA /* Assets.xcassets */,
 				30F77750221F73ED002A9FAA /* LaunchScreen.storyboard */,
 				30F77753221F73ED002A9FAA /* Info.plist */,
+				A3BB458F221FC2DB00E36273 /* ImagePicker.swift */,
+				A3BB4591221FC88400E36273 /* ImageViewController.swift */,
 			);
 			path = "ImagePicker-Starter";
 			sourceTree = "<group>";
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3BB4590221FC2DB00E36273 /* ImagePicker.swift in Sources */,
 				30F7774A221F73EC002A9FAA /* MainViewController.swift in Sources */,
+				A3BB4592221FC88400E36273 /* ImageViewController.swift in Sources */,
 				30F77748221F73EC002A9FAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
