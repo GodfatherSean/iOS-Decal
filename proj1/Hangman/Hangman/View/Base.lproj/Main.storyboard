@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pyN-Yt-xa7">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,304 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HangmanViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-Mv-dMS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="ZrO-zN-xk7">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Axl-zs-gcd">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3fA-NV-b5a">
+                                                <rect key="frame" x="16" y="7" width="70" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Exit Game"/>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="YQl-OY-VOw">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Xv-gF-BBu">
+                                                <rect key="frame" x="288" y="7" width="71" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Start Over"/>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dM2-OI-fbj" userLabel="hangmanStateImage">
+                                <rect key="frame" x="0.0" y="64" width="375" height="167"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A_B_C_D_E_F_G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2Y-e2-SZg" userLabel="wordLabel">
+                                <rect key="frame" x="0.0" y="231" width="375" height="100"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dn-Bh-Rzs" userLabel="incorrectGuessesLabel">
+                                <rect key="frame" x="0.0" y="331" width="375" height="50"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess: N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-nu-uKu" userLabel="remainingGuessesLabel">
+                                <rect key="frame" x="0.0" y="381" width="375" height="50"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="K2f-qv-Lhg" userLabel="buttonGroup">
+                                <rect key="frame" x="0.0" y="431" width="375" height="163"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KV6-Cw-KaN" userLabel="buttonGroupRow1">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKV-7V-ta0" userLabel="A">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="A"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-fx-aIp" userLabel="B">
+                                                <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="B"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-aH-9ID" userLabel="C">
+                                                <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="C"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZG-pB-gG0" userLabel="D">
+                                                <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="D"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyR-rq-rXP" userLabel="E">
+                                                <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="E"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-E6-yex" userLabel="F">
+                                                <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="F"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpN-qE-hKt" userLabel="G">
+                                                <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="G"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6ll-e6-67n" userLabel="buttonGroupRow2">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-PI-nXO">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="H"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9u0-Zk-7ms">
+                                                <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="I"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyx-Uz-I7j">
+                                                <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="J"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="239-cD-fcw">
+                                                <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="K"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWD-11-bOe">
+                                                <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="L"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTn-q0-KDt">
+                                                <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="M"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ee-uN-qde">
+                                                <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="N"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z3t-L6-Muq" userLabel="buttonGroupRow3">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xh1-ln-rih">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="O"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GY-3Z-STP">
+                                                <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="P"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3y-PK-UVC">
+                                                <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="Q"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voR-0d-amP">
+                                                <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="R"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxF-M1-YoB">
+                                                <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="S"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFo-bi-7Ye">
+                                                <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="T"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1Q-JQ-uIU">
+                                                <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="U"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="njA-X8-wCt" userLabel="buttonGroupRow4">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tX-r0-KEs" userLabel="_">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VpW-WG-PnH">
+                                                <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="V"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-90-KJO">
+                                                <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="W"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUd-AB-nHp">
+                                                <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="X"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGS-R1-SmJ">
+                                                <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="Y"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0t-PM-ntA">
+                                                <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                                <state key="normal" title="Z"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXc-5K-zdx" userLabel="_">
+                                                <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QU-87-Qkb">
+                                <rect key="frame" x="0.0" y="594" width="375" height="73"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="24"/>
+                                <state key="normal" title="Guess"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0bA-nu-uKu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="0PA-QH-R2e"/>
+                            <constraint firstItem="K2f-qv-Lhg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6Ko-wL-JHP"/>
+                            <constraint firstItem="8Dn-Bh-Rzs" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="EIq-kW-O2i"/>
+                            <constraint firstItem="0bA-nu-uKu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="Ji9-IE-csS"/>
+                            <constraint firstItem="wNh-Mv-dMS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="KF1-1o-bd1"/>
+                            <constraint firstItem="0QU-87-Qkb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="KHj-Lf-BAU"/>
+                            <constraint firstItem="8Dn-Bh-Rzs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LrW-ea-rNP"/>
+                            <constraint firstItem="R2Y-e2-SZg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="MXr-Jb-OAT"/>
+                            <constraint firstItem="R2Y-e2-SZg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OKT-mW-uBj"/>
+                            <constraint firstItem="0QU-87-Qkb" firstAttribute="top" secondItem="K2f-qv-Lhg" secondAttribute="bottom" id="Sdr-qh-2m1"/>
+                            <constraint firstItem="0QU-87-Qkb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Tep-E6-RAI"/>
+                            <constraint firstItem="R2Y-e2-SZg" firstAttribute="top" secondItem="dM2-OI-fbj" secondAttribute="bottom" id="VF6-3Q-N0P"/>
+                            <constraint firstItem="8Dn-Bh-Rzs" firstAttribute="top" secondItem="R2Y-e2-SZg" secondAttribute="bottom" id="WR0-L7-4tV"/>
+                            <constraint firstItem="0bA-nu-uKu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ald-IP-d2s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wNh-Mv-dMS" secondAttribute="trailing" id="d0s-kg-bZG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0QU-87-Qkb" secondAttribute="bottom" id="gUD-Js-VoL"/>
+                            <constraint firstItem="dM2-OI-fbj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hVH-zm-Rr0"/>
+                            <constraint firstItem="dM2-OI-fbj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="ofz-aQ-png"/>
+                            <constraint firstItem="0bA-nu-uKu" firstAttribute="top" secondItem="8Dn-Bh-Rzs" secondAttribute="bottom" id="q24-5k-6se"/>
+                            <constraint firstItem="dM2-OI-fbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qiX-KC-lgs"/>
+                            <constraint firstItem="wNh-Mv-dMS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qjd-oX-w8P"/>
+                            <constraint firstItem="wNh-Mv-dMS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rHG-XK-GLp"/>
+                            <constraint firstItem="K2f-qv-Lhg" firstAttribute="top" secondItem="0bA-nu-uKu" secondAttribute="bottom" id="rmw-xy-yy6"/>
+                            <constraint firstItem="8Dn-Bh-Rzs" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="tB6-aH-MHK"/>
+                            <constraint firstItem="K2f-qv-Lhg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vos-ym-Ewa"/>
+                            <constraint firstItem="dM2-OI-fbj" firstAttribute="top" secondItem="wNh-Mv-dMS" secondAttribute="bottom" id="vsM-8V-hdA"/>
+                            <constraint firstItem="R2Y-e2-SZg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y3G-iZ-fen"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-89" y="81"/>
+        </scene>
+        <!--Start Game View Controller-->
+        <scene sceneID="mOl-iQ-1sB">
+            <objects>
+                <viewController id="pyN-Yt-xa7" customClass="StartGameViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aw9-4Z-DQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eg-Hk-604" userLabel="gameNameLabel">
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman7" translatesAutoresizingMaskIntoConstraints="NO" id="cjz-65-pQ5" userLabel="gameIntroImage">
+                                <rect key="frame" x="0.0" y="220" width="375" height="200"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oh-T8-dZh" userLabel="startGameButton">
+                                <rect key="frame" x="0.0" y="420" width="375" height="247"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="36"/>
+                                <state key="normal" title="Start Game!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Eg-Hk-604" firstAttribute="top" secondItem="Cl4-wu-jjp" secondAttribute="top" id="3AA-gU-fwA"/>
+                            <constraint firstItem="cjz-65-pQ5" firstAttribute="centerX" secondItem="Cl4-wu-jjp" secondAttribute="centerX" id="4cq-vk-eAX"/>
+                            <constraint firstItem="cjz-65-pQ5" firstAttribute="top" secondItem="6Eg-Hk-604" secondAttribute="bottom" id="57Q-ni-yRi"/>
+                            <constraint firstItem="cjz-65-pQ5" firstAttribute="height" secondItem="Aw9-4Z-DQJ" secondAttribute="height" multiplier="0.3" id="FRq-jA-3x7"/>
+                            <constraint firstItem="6Eg-Hk-604" firstAttribute="width" secondItem="Aw9-4Z-DQJ" secondAttribute="width" id="Ho8-gB-HeI"/>
+                            <constraint firstItem="cjz-65-pQ5" firstAttribute="width" secondItem="Aw9-4Z-DQJ" secondAttribute="width" id="LPP-NX-Lo3"/>
+                            <constraint firstItem="6oh-T8-dZh" firstAttribute="centerX" secondItem="Cl4-wu-jjp" secondAttribute="centerX" id="TgW-RB-Hy2"/>
+                            <constraint firstItem="6oh-T8-dZh" firstAttribute="top" secondItem="cjz-65-pQ5" secondAttribute="bottom" id="VyH-t2-Tvn"/>
+                            <constraint firstItem="Cl4-wu-jjp" firstAttribute="bottom" secondItem="6oh-T8-dZh" secondAttribute="bottom" id="bGn-0F-j8U"/>
+                            <constraint firstItem="6Eg-Hk-604" firstAttribute="centerX" secondItem="Cl4-wu-jjp" secondAttribute="centerX" id="lFe-FW-fXz"/>
+                            <constraint firstItem="6Eg-Hk-604" firstAttribute="height" secondItem="Aw9-4Z-DQJ" secondAttribute="height" multiplier="0.3" id="oNz-bN-ouA"/>
+                            <constraint firstItem="6oh-T8-dZh" firstAttribute="width" secondItem="Aw9-4Z-DQJ" secondAttribute="width" id="vAA-fj-OFk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cl4-wu-jjp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2v-s3-ryr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-828" y="80.50974512743629"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman7" width="200" height="200"/>
+    </resources>
 </document>
