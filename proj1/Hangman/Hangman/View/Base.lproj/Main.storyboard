@@ -27,6 +27,10 @@
                                                 <rect key="frame" x="16" y="7" width="70" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Exit Game"/>
+                                                <connections>
+                                                    <action selector="exitGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wdg-2c-roH"/>
+                                                    <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ud-bz-24Z"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="YQl-OY-VOw">
@@ -34,6 +38,9 @@
                                                 <rect key="frame" x="288" y="7" width="71" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Start Over"/>
+                                                <connections>
+                                                    <action selector="startOver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qfu-xh-8zL"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -44,7 +51,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A_B_C_D_E_F_G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2Y-e2-SZg" userLabel="wordLabel">
                                 <rect key="frame" x="0.0" y="231" width="375" height="100"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,76 +77,118 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="A"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pGA-PZ-any"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-fx-aIp" userLabel="B">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-fx-aIp" userLabel="B">
                                                 <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="B"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTm-bl-ROB"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-aH-9ID" userLabel="C">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-aH-9ID" userLabel="C">
                                                 <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ab-FK-vYf"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZG-pB-gG0" userLabel="D">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZG-pB-gG0" userLabel="D">
                                                 <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="D"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBf-JU-CUe"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyR-rq-rXP" userLabel="E">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyR-rq-rXP" userLabel="E">
                                                 <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="E"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ee-Em-pFX"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-E6-yex" userLabel="F">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-E6-yex" userLabel="F">
                                                 <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="F"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pjc-yM-ZCf"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpN-qE-hKt" userLabel="G">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpN-qE-hKt" userLabel="G">
                                                 <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="G"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3IG-pS-M31"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6ll-e6-67n" userLabel="buttonGroupRow2">
                                         <rect key="frame" x="0.0" y="44" width="375" height="31"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-PI-nXO">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-PI-nXO">
                                                 <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="H"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="84T-ER-Cgv"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9u0-Zk-7ms">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9u0-Zk-7ms">
                                                 <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="I"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="19h-Ky-k0z"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyx-Uz-I7j">
                                                 <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="J"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ur-Tq-auE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="239-cD-fcw">
                                                 <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="K"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vw8-RQ-i84"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWD-11-bOe">
                                                 <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="L"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Oe-cF-gv2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTn-q0-KDt">
                                                 <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="M"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFi-Mx-ktY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ee-uN-qde">
                                                 <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="N"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tad-Et-iVr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -150,36 +199,57 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="O"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qvt-Ps-r5b"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GY-3Z-STP">
                                                 <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="P"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tx8-nS-U9X"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3y-PK-UVC">
                                                 <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="Q"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wGN-qR-4zB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voR-0d-amP">
                                                 <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="R"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUa-Cp-Jjd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxF-M1-YoB">
                                                 <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="S"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wn1-vH-rb6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFo-bi-7Ye">
                                                 <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="T"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ImP-Ps-P3Z"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1Q-JQ-uIU">
                                                 <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="U"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JYa-xg-Vz4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -194,26 +264,41 @@
                                                 <rect key="frame" x="53.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="V"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q2w-u2-iA1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-90-KJO">
                                                 <rect key="frame" x="107" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="W"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OCK-eI-CiL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUd-AB-nHp">
                                                 <rect key="frame" x="160.5" y="0.0" width="54" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="X"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S2m-wu-Qk4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGS-R1-SmJ">
                                                 <rect key="frame" x="214.5" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="Y"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDY-CL-j0O"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0t-PM-ntA">
                                                 <rect key="frame" x="268" y="0.0" width="53.5" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="Z"/>
+                                                <connections>
+                                                    <action selector="makePotentialGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHv-ey-vnJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXc-5K-zdx" userLabel="_">
                                                 <rect key="frame" x="321.5" y="0.0" width="53.5" height="31"/>
@@ -227,6 +312,9 @@
                                 <rect key="frame" x="0.0" y="594" width="375" height="73"/>
                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="24"/>
                                 <state key="normal" title="Guess"/>
+                                <connections>
+                                    <action selector="guess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JoV-9P-Mo6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -261,10 +349,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="exitGameButton" destination="3fA-NV-b5a" id="e6i-5U-yse"/>
+                        <outlet property="guessButton" destination="0QU-87-Qkb" id="bFn-Ze-9NZ"/>
+                        <outlet property="guessedPhraseLabel" destination="R2Y-e2-SZg" id="7ew-jV-3mT"/>
+                        <outlet property="hangmanStateImage" destination="dM2-OI-fbj" id="hPS-wW-4Rx"/>
+                        <outlet property="incorrectGuessesLabel" destination="8Dn-Bh-Rzs" id="9fj-Jx-qj1"/>
+                        <outlet property="potentialGuessLabel" destination="0bA-nu-uKu" id="cMn-Fe-PdQ"/>
+                        <outlet property="startOverButton" destination="YQl-OY-VOw" id="a5R-by-GQN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="81"/>
+            <point key="canvasLocation" x="14" y="81"/>
         </scene>
         <!--Start Game View Controller-->
         <scene sceneID="mOl-iQ-1sB">
@@ -287,6 +384,9 @@
                                 <rect key="frame" x="0.0" y="420" width="375" height="247"/>
                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="36"/>
                                 <state key="normal" title="Start Game!"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="Uhh-8H-P7p"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,6 +406,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cl4-wu-jjp"/>
                     </view>
+                    <connections>
+                        <outlet property="startGameButton" destination="6oh-T8-dZh" id="ElF-M4-dUn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2v-s3-ryr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

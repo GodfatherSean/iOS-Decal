@@ -13,7 +13,9 @@
 		6BA63671221C8FA00000FB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA63670221C8FA00000FB86 /* Assets.xcassets */; };
 		6BA63674221C8FA00000FB86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA63672221C8FA00000FB86 /* LaunchScreen.storyboard */; };
 		A3133EB72223BCB300C2389C /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3133EB62223BCB300C2389C /* StartGameViewController.swift */; };
-		A38D72EF22223A470082F8E4 /* Hangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D72EE22223A470082F8E4 /* Hangman.swift */; };
+		A3133EB92223C5DA00C2389C /* phrases.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3133EB82223C5DA00C2389C /* phrases.plist */; };
+		A3133EBB2223C8CD00C2389C /* HangmanGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3133EBA2223C8CD00C2389C /* HangmanGame.swift */; };
+		A38D72EF22223A470082F8E4 /* HangmanPhrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D72EE22223A470082F8E4 /* HangmanPhrases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		6BA63673221C8FA00000FB86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BA63675221C8FA00000FB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3133EB62223BCB300C2389C /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
-		A38D72EE22223A470082F8E4 /* Hangman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangman.swift; sourceTree = "<group>"; };
+		A3133EB82223C5DA00C2389C /* phrases.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = phrases.plist; sourceTree = "<group>"; };
+		A3133EBA2223C8CD00C2389C /* HangmanGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanGame.swift; sourceTree = "<group>"; };
+		A38D72EE22223A470082F8E4 /* HangmanPhrases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanPhrases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +101,9 @@
 		A38D72ED22223A290082F8E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A38D72EE22223A470082F8E4 /* Hangman.swift */,
+				A38D72EE22223A470082F8E4 /* HangmanPhrases.swift */,
+				A3133EB82223C5DA00C2389C /* phrases.plist */,
+				A3133EBA2223C8CD00C2389C /* HangmanGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3133EB92223C5DA00C2389C /* phrases.plist in Resources */,
 				6BA63674221C8FA00000FB86 /* LaunchScreen.storyboard in Resources */,
 				6BA63671221C8FA00000FB86 /* Assets.xcassets in Resources */,
 				6BA6366F221C8F9E0000FB86 /* Main.storyboard in Resources */,
@@ -174,8 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA6366C221C8F9E0000FB86 /* HangmanViewController.swift in Sources */,
+				A3133EBB2223C8CD00C2389C /* HangmanGame.swift in Sources */,
 				6BA6366A221C8F9E0000FB86 /* AppDelegate.swift in Sources */,
-				A38D72EF22223A470082F8E4 /* Hangman.swift in Sources */,
+				A38D72EF22223A470082F8E4 /* HangmanPhrases.swift in Sources */,
 				A3133EB72223BCB300C2389C /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
