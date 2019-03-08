@@ -17,7 +17,12 @@ class FeedBrowserViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.reloadData()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,13 +40,16 @@ class FeedBrowserViewController: UIViewController, UITableViewDataSource, UITabl
         return CGFloat(25)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(60)
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return data.feeds[section]
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 25))
-        view.backgroundColor = UIColor(red: 253.0/255.0, green: 240.0/255.0, blue: 196.0/255.0, alpha: 1)
         let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width - 30, height: 25))
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.textColor = UIColor.black
@@ -55,9 +63,12 @@ class FeedBrowserViewController: UIViewController, UITableViewDataSource, UITabl
             if let snaps = feedData[indexPath.section] {
                 cell.snap = snaps[indexPath.row]
             }
-            cell.cellIconImageView.image = #imageLiteral(resourceName: "unread")
+            cell.cellIconImageView.contentMode = .scaleAspectFill
+            cell.cellIconImageView.image = UIImage(named: "unread")?.withAlignmentRectInsets(
+                UIEdgeInsets(top: -4, left: -4, bottom: -4, right: -4))
             cell.cellUsernameLabel.text = cell.snap.user
             cell.cellTimestampLabel.text = formatTimestamp(cell.snap)
+            return cell
         }
         return UITableViewCell()
     }

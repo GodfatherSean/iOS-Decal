@@ -47,25 +47,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FCd-2k-ZyI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
+                                                    <rect key="frame" x="20.5" y="0.0" width="373" height="77.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIS-cu-FDU">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unread" translatesAutoresizingMaskIntoConstraints="NO" id="IIS-cu-FDU">
                                                             <rect key="frame" x="0.0" y="0.0" width="77.5" height="77.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="IIS-cu-FDU" secondAttribute="height" multiplier="1:1" id="gGW-Sd-jbb"/>
                                                             </constraints>
+                                                            <edgeInsets key="layoutMargins" top="10" left="10" bottom="10" right="10"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yCL-fm-qaW">
-                                                            <rect key="frame" x="92.5" y="0.0" width="321.5" height="77.5"/>
+                                                            <rect key="frame" x="92.5" y="0.0" width="280.5" height="77.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username.placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blA-bJ-QsW">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="321.5" height="39"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="280.5" height="39"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp.placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr5-up-SMM">
-                                                                    <rect key="frame" x="0.0" y="39" width="321.5" height="38.5"/>
+                                                                    <rect key="frame" x="0.0" y="39" width="280.5" height="38.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -73,10 +74,14 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="IIS-cu-FDU" firstAttribute="height" secondItem="FCd-2k-ZyI" secondAttribute="height" multiplier="0.9" id="FkE-MB-VJL"/>
+                                                        <constraint firstItem="IIS-cu-FDU" firstAttribute="leading" secondItem="FCd-2k-ZyI" secondAttribute="leading" id="RpQ-fQ-eAG"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="FCd-2k-ZyI" firstAttribute="width" secondItem="CHi-P2-Tz5" secondAttribute="width" id="8Lx-Vz-M7x"/>
+                                                <constraint firstItem="FCd-2k-ZyI" firstAttribute="width" secondItem="CHi-P2-Tz5" secondAttribute="width" multiplier="0.9" id="8Lx-Vz-M7x"/>
                                                 <constraint firstItem="FCd-2k-ZyI" firstAttribute="centerX" secondItem="CHi-P2-Tz5" secondAttribute="centerX" id="QnB-2R-K34"/>
                                                 <constraint firstItem="FCd-2k-ZyI" firstAttribute="height" secondItem="CHi-P2-Tz5" secondAttribute="height" id="qab-wv-CNe"/>
                                                 <constraint firstItem="FCd-2k-ZyI" firstAttribute="centerY" secondItem="CHi-P2-Tz5" secondAttribute="centerY" id="zRN-Ay-KbZ"/>
@@ -310,5 +315,6 @@
     </scenes>
     <resources>
         <image name="goButton" width="132" height="130"/>
+        <image name="unread" width="158" height="158"/>
     </resources>
 </document>
