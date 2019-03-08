@@ -13,15 +13,18 @@ class FeedPickerViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var selectedImageLabel: UILabel!
     @IBOutlet weak var selectedFeedLabel: UILabel!
     @IBOutlet weak var feedPickerTableView: UITableView!
+    @IBOutlet weak var makePostButton: UIButton!
     
     var selectedImage: String!
     var selectedFeed: String!
+    var selectedFeedIndex: Int!
     let data = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         feedPickerTableView.dataSource = self
         feedPickerTableView.delegate = self
+        makePostButton.isEnabled = false
         if let label = selectedImage as? String {
             selectedImageLabel.text = "Posting image: '\(label)'"
         }
@@ -47,18 +50,24 @@ class FeedPickerViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedFeed = data.feeds[indexPath.row]
         selectedFeedLabel.text = "To feed: '\(data.feeds[indexPath.row])'"
-        selectedFeedLabel.text = "To feed: '\(data.feeds[indexPath.item])'"
+        selectedFeedIndex = indexPath.row
+        makePostButton.isEnabled = true
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func makePost(_ sender: UIButton) {
+        // save the new post to the global array.
+        let snapImage = UIImage(named: selectedImage)!
+        let snap = Snap(snapImage: snapImage, userName: "Zehao Huang", feedName: selectedFeed, timestamp: Date())
+        feedData[selectedFeedIndex]?.append(snap)
+        // Show posted alert and go back
+        let postSuccessAlert = UIAlertController(title: "Snap Posted!", message: "Your snap is saved.", preferredStyle: .alert)
+        postSuccessAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        present(postSuccessAlert, animated: true, completion: nil)
     }
-    */
 
 }
