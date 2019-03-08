@@ -19,19 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKG-Wd-RQw">
-                                <rect key="frame" x="16" y="126" width="382" height="29"/>
+                                <rect key="frame" x="16" y="125.5" width="382" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$000.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="CIm-aq-tjd">
-                                <rect key="frame" x="16" y="414.5" width="382" height="77"/>
+                                <rect key="frame" x="16" y="415" width="382" height="76.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="64"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0m-hk-Bnr">
-                                <rect key="frame" x="16" y="60" width="382" height="58"/>
+                                <rect key="frame" x="16" y="60" width="382" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,16 +42,48 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3C8-MB-BMu">
+                                <rect key="frame" x="10.5" y="832" width="393" height="30"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Uh2-T3-VcO">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="31"/>
+                                        <segments>
+                                            <segment title="USD"/>
+                                            <segment title="EUR"/>
+                                            <segment title="GBP"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="currencySelectedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sWs-Jg-Phh"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvr-S7-fCC">
+                                        <rect key="frame" x="276" y="0.0" width="117" height="30"/>
+                                        <state key="normal" title="Refresh"/>
+                                        <connections>
+                                            <action selector="refreshData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bis-FX-Wde"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peF-Nx-NjO">
+                                <rect key="frame" x="0.0" y="616" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="peF-Nx-NjO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="16L-e3-64K"/>
                             <constraint firstItem="h0m-hk-Bnr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1L0-4g-kH2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BKG-Wd-RQw" secondAttribute="trailing" constant="16" id="1iO-X1-Wxk"/>
+                            <constraint firstItem="3C8-MB-BMu" firstAttribute="top" secondItem="peF-Nx-NjO" secondAttribute="bottom" id="1nQ-gv-CF6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h0m-hk-Bnr" secondAttribute="trailing" constant="16" id="5aR-Ka-gNC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CIm-aq-tjd" secondAttribute="trailing" constant="16" id="B5O-Ku-vjU"/>
                             <constraint firstItem="BKG-Wd-RQw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DCF-gu-O4X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3C8-MB-BMu" secondAttribute="bottom" id="Dme-oL-Pir"/>
+                            <constraint firstItem="peF-Nx-NjO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="MF3-O1-Fuu"/>
+                            <constraint firstItem="3C8-MB-BMu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bMJ-qL-I2S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UrA-Z6-pSF" secondAttribute="trailing" constant="16" id="bsL-c1-Kn4"/>
                             <constraint firstItem="CIm-aq-tjd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="d6l-Cq-Pen"/>
+                            <constraint firstItem="3C8-MB-BMu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.95" id="k8W-iv-DLi"/>
                             <constraint firstItem="h0m-hk-Bnr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="kk1-SO-ndd"/>
                             <constraint firstItem="BKG-Wd-RQw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ktB-Z2-7u5"/>
                             <constraint firstItem="BKG-Wd-RQw" firstAttribute="top" secondItem="h0m-hk-Bnr" secondAttribute="bottom" constant="8" id="oBC-v6-ZKn"/>
@@ -66,6 +98,8 @@
                     </view>
                     <connections>
                         <outlet property="changeLabel" destination="UrA-Z6-pSF" id="hUt-kf-9hm"/>
+                        <outlet property="currencyPickerview" destination="peF-Nx-NjO" id="hXK-9p-hdT"/>
+                        <outlet property="currencySegmentControl" destination="Uh2-T3-VcO" id="u4f-ff-lWW"/>
                         <outlet property="nameLabel" destination="BKG-Wd-RQw" id="uOg-qO-tKU"/>
                         <outlet property="priceLabel" destination="CIm-aq-tjd" id="uyW-Lj-dn8"/>
                         <outlet property="symbolLabel" destination="h0m-hk-Bnr" id="u0k-bc-wuN"/>
@@ -73,6 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </scene>
     </scenes>
 </document>

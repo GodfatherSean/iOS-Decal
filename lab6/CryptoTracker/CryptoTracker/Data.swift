@@ -26,7 +26,8 @@ class Data {
     
     init() {
         cryptoNames = Array(cryptoData.keys).sorted()
-        cryptoNames = Array(currencyData.keys).sorted()
+        currencyNames = Array(currencyData.keys).sorted()
     }
-    
 }
+
+
