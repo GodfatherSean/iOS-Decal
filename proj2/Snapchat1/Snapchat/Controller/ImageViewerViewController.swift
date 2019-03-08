@@ -27,6 +27,7 @@ class ImageViewerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        postImageView.contentMode = .scaleAspectFit
         postImageView.image = snap.image
         snap.read = true
     }

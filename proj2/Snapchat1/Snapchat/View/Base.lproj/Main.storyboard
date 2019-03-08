@@ -123,11 +123,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkP-5v-Ccl">
-                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XkP-5v-Ccl" secondAttribute="height" multiplier="1:1" id="cY4-8o-5cG"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="inV-bn-1s4" appends="YES" id="jim-M0-CsD"/>
                                 </connections>
@@ -138,6 +135,7 @@
                             <constraint firstItem="XkP-5v-Ccl" firstAttribute="centerX" secondItem="dO9-kO-v37" secondAttribute="centerX" id="1ZL-Z8-B0G"/>
                             <constraint firstItem="XkP-5v-Ccl" firstAttribute="width" secondItem="6Q1-bV-WmM" secondAttribute="width" id="P03-xt-IeL"/>
                             <constraint firstItem="XkP-5v-Ccl" firstAttribute="centerY" secondItem="dO9-kO-v37" secondAttribute="centerY" id="TiP-Ps-eLT"/>
+                            <constraint firstItem="XkP-5v-Ccl" firstAttribute="height" secondItem="dO9-kO-v37" secondAttribute="height" id="WpG-Nz-s6F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dO9-kO-v37"/>
                     </view>
