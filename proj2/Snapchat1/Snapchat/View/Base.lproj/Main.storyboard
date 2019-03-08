@@ -75,7 +75,6 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="IIS-cu-FDU" firstAttribute="height" secondItem="FCd-2k-ZyI" secondAttribute="height" multiplier="0.9" id="FkE-MB-VJL"/>
                                                         <constraint firstItem="IIS-cu-FDU" firstAttribute="leading" secondItem="FCd-2k-ZyI" secondAttribute="leading" id="RpQ-fQ-eAG"/>
                                                     </constraints>
                                                 </stackView>
@@ -91,6 +90,7 @@
                                             <outlet property="cellIconImageView" destination="IIS-cu-FDU" id="mAy-6z-5ai"/>
                                             <outlet property="cellTimestampLabel" destination="Fr5-up-SMM" id="cBZ-Ik-s8H"/>
                                             <outlet property="cellUsernameLabel" destination="blA-bJ-QsW" id="Nwc-DE-A0b"/>
+                                            <segue destination="Xjl-3m-cJb" kind="showDetail" identifier="viewImage" trigger="accessoryAction" id="ccw-T1-VGB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -114,6 +114,46 @@
             </objects>
             <point key="canvasLocation" x="-159.42028985507247" y="-75"/>
         </scene>
+        <!--Image Viewer View Controller-->
+        <scene sceneID="qE5-IK-Tz3">
+            <objects>
+                <viewController id="Xjl-3m-cJb" customClass="ImageViewerViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Q1-bV-WmM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkP-5v-Ccl">
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XkP-5v-Ccl" secondAttribute="height" multiplier="1:1" id="cY4-8o-5cG"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="inV-bn-1s4" appends="YES" id="jim-M0-CsD"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XkP-5v-Ccl" firstAttribute="centerX" secondItem="dO9-kO-v37" secondAttribute="centerX" id="1ZL-Z8-B0G"/>
+                            <constraint firstItem="XkP-5v-Ccl" firstAttribute="width" secondItem="6Q1-bV-WmM" secondAttribute="width" id="P03-xt-IeL"/>
+                            <constraint firstItem="XkP-5v-Ccl" firstAttribute="centerY" secondItem="dO9-kO-v37" secondAttribute="centerY" id="TiP-Ps-eLT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dO9-kO-v37"/>
+                    </view>
+                    <connections>
+                        <outlet property="postImageView" destination="XkP-5v-Ccl" id="gLL-Eq-hbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XuG-7y-J7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="inV-bn-1s4">
+                    <connections>
+                        <action selector="goBack" destination="Xjl-3m-cJb" id="OQG-g7-6ue"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="800" y="-75"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iC4-hU-1K3">
             <objects>
@@ -135,7 +175,6 @@
         <!--Post-->
         <scene sceneID="BaB-KT-ttC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p83-ga-1Fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController wantsFullScreenLayout="YES" id="ZRs-IL-07Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Post" id="Tut-6P-Aez" userLabel="Post"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="enm-ss-MUx">
@@ -146,6 +185,7 @@
                         <segue destination="zkd-nY-68v" kind="relationship" relationship="rootViewController" id="PcZ-Cp-EsY"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p83-ga-1Fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1112" y="-830"/>
         </scene>

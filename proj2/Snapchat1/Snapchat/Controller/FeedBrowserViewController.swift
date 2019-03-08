@@ -11,6 +11,7 @@ import UIKit
 class FeedBrowserViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let data = Data()
+    var selectedSnap: Snap!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,7 +19,6 @@ class FeedBrowserViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,28 +64,30 @@ class FeedBrowserViewController: UIViewController, UITableViewDataSource, UITabl
                 cell.snap = snaps[indexPath.row]
             }
             cell.cellIconImageView.contentMode = .scaleAspectFill
-            cell.cellIconImageView.image = UIImage(named: "unread")?.withAlignmentRectInsets(
-                UIEdgeInsets(top: -4, left: -4, bottom: -4, right: -4))
+            cell.cellIconImageView.image = cell.snap.getIconImage()
             cell.cellUsernameLabel.text = cell.snap.user
-            cell.cellTimestampLabel.text = formatTimestamp(cell.snap)
+            cell.cellTimestampLabel.text = cell.snap.formatTimestamp()
             return cell
         }
         return UITableViewCell()
     }
     
-    private func formatTimestamp(_ snap: Snap) -> String! {
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute]
-        formatter.unitsStyle = .full
-        formatter.maximumUnitCount = 1
-        if let formatted = formatter.string(from: snap.time, to: Date()) {
-            return "posted \(formatted) ago."
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let snap = feedData[indexPath.section]?[indexPath.row] {
+            selectedSnap = snap
         }
-        return "error string"
+        if !selectedSnap.read {
+            performSegue(withIdentifier: "viewImage", sender: selectedSnap)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if identifier == "viewImage" {
+                if let dest = segue.destination as? ImageViewerViewController, let snap = sender as? Snap {
+                    dest.snap = snap
+                }
+            }
+        }
     }
 }

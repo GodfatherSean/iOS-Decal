@@ -16,6 +16,7 @@
 		A3A1528322315C7300A5EF2F /* ImageFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1528222315C7300A5EF2F /* ImageFeed.swift */; };
 		A3A15285223167F100A5EF2F /* FeedBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A15284223167F100A5EF2F /* FeedBrowserViewController.swift */; };
 		A3A152872231EC7700A5EF2F /* SnapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A152862231EC7700A5EF2F /* SnapCell.swift */; };
+		A3A152892232496800A5EF2F /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A152882232496800A5EF2F /* ImageViewerViewController.swift */; };
 		A3E98225222F9E0C00CD9478 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E98224222F9E0C00CD9478 /* ImagePickerViewController.swift */; };
 		A3E98227222F9E7900CD9478 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E98226222F9E7900CD9478 /* ImageCell.swift */; };
 		A3E9822B222FBF3C00CD9478 /* FeedPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E9822A222FBF3C00CD9478 /* FeedPickerViewController.swift */; };
@@ -34,6 +35,7 @@
 		A3A1528222315C7300A5EF2F /* ImageFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeed.swift; sourceTree = "<group>"; };
 		A3A15284223167F100A5EF2F /* FeedBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBrowserViewController.swift; sourceTree = "<group>"; };
 		A3A152862231EC7700A5EF2F /* SnapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCell.swift; sourceTree = "<group>"; };
+		A3A152882232496800A5EF2F /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		A3E98224222F9E0C00CD9478 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		A3E98226222F9E7900CD9478 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		A3E9822A222FBF3C00CD9478 /* FeedPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPickerViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				A3E98230222FCBBF00CD9478 /* FeedCell.swift */,
 				A3A15284223167F100A5EF2F /* FeedBrowserViewController.swift */,
 				A3A152862231EC7700A5EF2F /* SnapCell.swift */,
+				A3A152882232496800A5EF2F /* ImageViewerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				A3A1528322315C7300A5EF2F /* ImageFeed.swift in Sources */,
 				6BDA0FE022289A740035D08B /* Data.swift in Sources */,
 				6BDA0FCE22289A3D0035D08B /* AppDelegate.swift in Sources */,
+				A3A152892232496800A5EF2F /* ImageViewerViewController.swift in Sources */,
 				A3E98227222F9E7900CD9478 /* ImageCell.swift in Sources */,
 				A3A1528122315B5C00A5EF2F /* Snap.swift in Sources */,
 				A3E9822B222FBF3C00CD9478 /* FeedPickerViewController.swift in Sources */,
