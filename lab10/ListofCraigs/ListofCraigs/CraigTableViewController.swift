@@ -7,31 +7,46 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Craig { // Provided for your convenience. You may need to change some things here later.
+class Craig : Object { // Provided for your convenience. You may need to change some things here later.
+    
     @objc dynamic var name = ""
     @objc dynamic var occupation = ""
+    
 }
 
 class CraigTableViewController: UITableViewController {
     
-    var craigs = [["Anderson", "Hockey Player"],
-                  ["David", "Pop Star"],
-                  ["Federighi", "Apple Executive"],
-                  ["Ferguson", "Talk Show Host"]]
+    let realm = try! Realm()
+    let craigs = try! Realm().objects(Craig.self)
     
     override func viewDidLoad(){
         super.viewDidLoad()
         self.title = "List of Craigs"
+        if self.realm.isEmpty {
+            for item in [["Anderson", "Hockey Player"],
+                         ["David", "Pop Star"],
+                         ["Federighi", "Apple Executive"],
+                         ["Ferguson", "Talk Show Host"]] {
+                let craig = Craig()
+                craig.name = item[0]
+                craig.occupation = item[1]
+                try! realm.write {
+                    realm.add(craig)
+                }
+            }
+        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return craigs.count
+        return self.craigs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "craigCell", for: indexPath)
-        cell.textLabel?.text = "Craig \(craigs[indexPath.row][0]): \(craigs[indexPath.row][1])"
+        cell.textLabel?.text = "Craig \(craigs[indexPath.row].name): \(craigs[indexPath.row].occupation)"
         return cell
     }
     
@@ -46,7 +61,12 @@ class CraigTableViewController: UITableViewController {
                 let nameToSave = nameField.text else { return }
             guard let occupationField = alert.textFields?[1],
                 let occupationToSave = occupationField.text else { return }
-            self.craigs.append([nameToSave, occupationToSave])
+            try! self.realm.write {
+                let craig = Craig()
+                craig.name = nameToSave
+                craig.occupation = occupationToSave
+                self.realm.add(craig)
+            }
             self.tableView.reloadData()
         }
         alert.addAction(saveAction)
@@ -56,7 +76,9 @@ class CraigTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            craigs.remove(at: indexPath.row)
+            try! self.realm.write {
+                self.realm.delete(self.craigs[indexPath.row])
+            }
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
