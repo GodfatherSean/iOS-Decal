@@ -20,7 +20,20 @@ class ViewController: UIViewController {
     
     @IBAction func analyzeButtonPressed(_ sender: Any) {
         guard let textToAnalyze = inputTextView.text else {return}
-        // Your code here
+        let wordList =  textToAnalyze.components(separatedBy: .punctuationCharacters).joined().components(separatedBy: " ").filter{!$0.isEmpty}
+        var counts: [String: Double] = [:]
+        wordList.forEach { counts[$0, default: 0.0] += 1.0 }
+        let model = SentimentPolarity()
+        do {
+            let output = try model.prediction(input: counts)
+            if output.classLabel == "Pos" {
+                self.sentimentLabel.text = "Positive"
+            } else {
+                self.sentimentLabel.text = "Negative"
+            }
+        } catch {
+            return
+        }
     }
 }
 

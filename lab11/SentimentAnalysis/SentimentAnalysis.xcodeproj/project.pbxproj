@@ -12,6 +12,7 @@
 		6BC6FDFE22724F1100858661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6FDFC22724F1100858661 /* Main.storyboard */; };
 		6BC6FE0022724F1300858661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6FDFF22724F1300858661 /* Assets.xcassets */; };
 		6BC6FE0322724F1300858661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6FE0122724F1300858661 /* LaunchScreen.storyboard */; };
+		A395F3B72278D4780075117A /* SentimentPolarity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A395F3B62278D4780075117A /* SentimentPolarity.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		6BC6FDFF22724F1300858661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BC6FE0222724F1300858661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BC6FE0422724F1300858661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A395F3B62278D4780075117A /* SentimentPolarity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SentimentPolarity.mlmodel; path = ../../../../../../../../Downloads/SentimentPolarity.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		6BC6FDF722724F1100858661 /* SentimentAnalysis */ = {
 			isa = PBXGroup;
 			children = (
+				A395F3B62278D4780075117A /* SentimentPolarity.mlmodel */,
 				6BC6FDF822724F1100858661 /* AppDelegate.swift */,
 				6BC6FDFA22724F1100858661 /* ViewController.swift */,
 				6BC6FDFC22724F1100858661 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A395F3B72278D4780075117A /* SentimentPolarity.mlmodel in Sources */,
 				6BC6FDFB22724F1100858661 /* ViewController.swift in Sources */,
 				6BC6FDF922724F1100858661 /* AppDelegate.swift in Sources */,
 			);
